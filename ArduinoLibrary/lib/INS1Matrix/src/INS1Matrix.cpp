@@ -19,6 +19,9 @@ INS1Matrix::INS1Matrix(uint8_t dataPin, uint8_t clockPin, uint8_t latchPin, uint
     _inverted = inverted;
     _highValue = inverted ? LOW : HIGH; // if signals are inverted, swap the high and low levels we are going to use.
     _lowValue = inverted ? HIGH : LOW;
+    Serial.begin(115200);
+    Serial.println("ON");
+
 }
 
 void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[], uint8_t displays) // write 2 uint32_t to the display * the num of displays. imgData should be an array of uint32_t 2*displays big
@@ -37,7 +40,7 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[], uint8_t displays) /
     digitalWrite(_latchPin, _highValue);
     digitalWrite(_latchPin, _lowValue);
 }
-void INS1Matrix::setAnimationToDisplay(uint32_t **animationImgData, uint8_t displays, uint8_t frames, uint8_t delay) // write 2 uint32_t to display * the num of displays, how many frames are in the animation data, the delay between frames in ms. imgData should be an array of frames (array of uint32_t 2*displays big)
+void INS1Matrix::setAnimationToDisplay(const uint32_t** animationImgData, uint8_t displays, uint8_t frames, uint8_t delay) // write 2 uint32_t to display * the num of displays, how many frames are in the animation data, the delay between frames in ms. imgData should be a const array of frames (array of uint32_t 2*displays big)
 {
     _animationImgData = animationImgData;
     _displays = displays;
@@ -45,22 +48,23 @@ void INS1Matrix::setAnimationToDisplay(uint32_t **animationImgData, uint8_t disp
     _frameDelay = delay;
     _timeSinceLastFrame = millis();
     _lastFrame = 0;
-    writeStaticImgToDisplay(_animationImgData[_lastFrame], _displays);
+
 }
 void INS1Matrix::animateDisplay()
 {
     uint32_t currentMillis = millis();
     if ((currentMillis - _timeSinceLastFrame) >= _frameDelay)
     {
-        writeStaticImgToDisplay(_animationImgData[_lastFrame], _displays);
-        if (_lastFrame < _frames)
-        {
-            _lastFrame++;
-        }
-        else
-        {
-            _lastFrame = 0;
-        }
+        Serial.println("AboutToWriteStatic");
+        //Serial.println(_animationImgData);
+        Serial.println(_lastFrame);
+        Serial.println(_animationImgData[_lastFrame][0]);
+        writeStaticImgToDisplay(const_cast<uint32_t *>(_animationImgData[_lastFrame]), _displays);
+		_lastFrame++;
+		if (_lastFrame >= _frames)
+		{
+			_lastFrame = 0;
+		}
 
         _timeSinceLastFrame = currentMillis;
     }
