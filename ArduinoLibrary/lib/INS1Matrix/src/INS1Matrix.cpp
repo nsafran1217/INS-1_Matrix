@@ -20,14 +20,10 @@ INS1Matrix::INS1Matrix(uint8_t dataPin, uint8_t clockPin, uint8_t latchPin, uint
     _displays = displays;
     _highValue = inverted ? LOW : HIGH; // if signals are inverted, swap the high and low levels we are going to use.
     _lowValue = inverted ? HIGH : LOW;
-    Serial.begin(115200);
-    Serial.println("ON");
-
 }
 
 void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[]) // write 2 uint32_t to the display * the num of displays. imgData should be an array of uint32_t 2*displays big
 {
-    Serial.println("YO");
     uint8_t bitValue;
     for (int i = 0; i < _displays * 2; i++) // displays*2 becuase each display needs two uint32_t's
     {
@@ -35,7 +31,6 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[]) // write 2 uint32_t
         {
             bitValue = _inverted ? !(imgData[i] & (1ul << j)) : !!(imgData[i] & (1ul << j));
             digitalWrite(_dataPin, bitValue);
-                        Serial.print(bitValue);
             digitalWrite(_clockPin, _highValue);
             digitalWrite(_clockPin, _lowValue);
         }
@@ -50,8 +45,6 @@ void INS1Matrix::setAnimationToDisplay(const uint32_t* animationImgData) // writ
 
     _frameDelay = (animationImgData[0] & 0xFFFF);
     _frames = (animationImgData[0] >> 16) & 0xFFFF;
-    Serial.println(_frames);
-    Serial.println(_frameDelay);
     _timeOfLastFrame = millis();
     _lastFrame = 0;
 
