@@ -32,6 +32,7 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[], uint8_t displays) /
         for (int j = 0; j < 32; j++)
         {
             bitValue = _inverted ? !(imgData[i] & (1ul << j)) : !!(imgData[i] & (1ul << j));
+            Serial.print(bitValue);
             digitalWrite(_dataPin, bitValue);
             digitalWrite(_clockPin, _highValue);
             digitalWrite(_clockPin, _lowValue);
@@ -40,7 +41,7 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[], uint8_t displays) /
     digitalWrite(_latchPin, _highValue);
     digitalWrite(_latchPin, _lowValue);
 }
-void INS1Matrix::setAnimationToDisplay(const uint32_t** animationImgData, uint8_t displays, uint8_t frames, uint8_t delay) // write 2 uint32_t to display * the num of displays, how many frames are in the animation data, the delay between frames in ms. imgData should be a const array of frames (array of uint32_t 2*displays big)
+void INS1Matrix::setAnimationToDisplay(const uint32_t* animationImgData, uint8_t displays, uint8_t frames, uint8_t delay) // write 2 uint32_t to display * the num of displays, how many frames are in the animation data, the delay between frames in ms. imgData should be a const array of frames (array of uint32_t 2*displays big)
 {
     _animationImgData = animationImgData;
     _displays = displays;
@@ -57,9 +58,14 @@ void INS1Matrix::animateDisplay()
     {
         Serial.println("AboutToWriteStatic");
         //Serial.println(_animationImgData);
-        Serial.println(_lastFrame);
-        Serial.println(_animationImgData[_lastFrame][0]);
-        writeStaticImgToDisplay(const_cast<uint32_t *>(_animationImgData[_lastFrame]), _displays);
+        //Serial.println(_lastFrame);
+        //Serial.println(_animationImgData[0]);
+        //Serial.println(*(_animationImgData + (_lastFrame * _displays*2)));
+        //Serial.println((_animationImgData + (_lastFrame * _displays*2))[0]);
+
+
+
+        writeStaticImgToDisplay(const_cast<uint32_t *>(_animationImgData + (_lastFrame * _displays*2)), _displays);
 		_lastFrame++;
 		if (_lastFrame >= _frames)
 		{
