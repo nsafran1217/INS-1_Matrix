@@ -27,10 +27,10 @@ class INS1Matrix
     uint8_t _highValue;
     uint8_t _lowValue;
     const uint32_t* _animationImgData;
-    int _frames;
-    int _frameDelay;
+    uint16_t _frames;
+    uint16_t _frameDelay;
     uint32_t _timeOfLastFrame;  //time since last frame was displayed
-    int _lastFrame; //last frame sent to display
+    uint16_t _lastFrame; //last frame sent to display
 
 };
 
