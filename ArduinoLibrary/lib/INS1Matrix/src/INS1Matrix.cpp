@@ -12,6 +12,7 @@ INS1Matrix::INS1Matrix(uint8_t dataPin, uint8_t clockPin, uint8_t latchPin, uint
     pinMode(clockPin, OUTPUT);
     pinMode(latchPin, OUTPUT);
     pinMode(blankPin, OUTPUT);
+    digitalWrite(blankPin, LOW);
     _dataPin = dataPin;
     _clockPin = clockPin;
     _latchPin = latchPin;
