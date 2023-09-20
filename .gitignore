@@ -3,7 +3,7 @@ ArduinoLibrary/.vscode/.browse.c_cpp.db*
 ArduinoLibrary/.vscode/c_cpp_properties.json
 ArduinoLibrary/.vscode/launch.json
 ArduinoLibrary/.vscode/ipch
-ArduinoLibrary/src/*
+
 ArduinoLibrary/lib/IV17/*
 ArduinoLibrary/lib/NixieBoard/*
 ArduinoLibrary/lib/README
