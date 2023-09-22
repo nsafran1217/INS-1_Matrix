@@ -34,10 +34,12 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[]) // write 2 uint32_t
             bitValue = _inverted ? !!(imgData[i] & (1ul << j)) : !!!(imgData[i] & (1ul << j));
             digitalWrite(_dataPin, bitValue);
             digitalWrite(_clockPin, _highValue);
+            delayMicroseconds(7);
             digitalWrite(_clockPin, _lowValue);
         }
     }
     digitalWrite(_latchPin, _highValue);
+    delayMicroseconds(7);
     digitalWrite(_latchPin, _lowValue);
     
 }
