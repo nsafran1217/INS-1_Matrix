@@ -30,8 +30,7 @@ void INS1Matrix::writeStaticImgToDisplay(uint32_t imgData[]) // write 2 uint32_t
     {
         for (int j = 0; j < 32; j++)
         {
-            //the hardware polarity is inverted on v1 of the boards, so we ainverting the inversion
-            bitValue = _inverted ? !!(imgData[i] & (1ul << j)) : !!!(imgData[i] & (1ul << j));
+            bitValue = _inverted ? !(imgData[i] & (1ul << j)) : !!(imgData[i] & (1ul << j));
             digitalWrite(_dataPin, bitValue);
             digitalWrite(_clockPin, _highValue);
             delayMicroseconds(7);
