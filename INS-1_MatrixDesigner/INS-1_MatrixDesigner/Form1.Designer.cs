@@ -378,6 +378,7 @@ namespace INS_1_MatrixDesigner
             // 
             // openbutton
             // 
+            this.openbutton.Enabled = false;
             this.openbutton.Location = new System.Drawing.Point(533, 314);
             this.openbutton.Name = "openbutton";
             this.openbutton.Size = new System.Drawing.Size(75, 23);
@@ -388,6 +389,7 @@ namespace INS_1_MatrixDesigner
             // 
             // savebutton
             // 
+            this.savebutton.Enabled = false;
             this.savebutton.Location = new System.Drawing.Point(533, 344);
             this.savebutton.Name = "savebutton";
             this.savebutton.Size = new System.Drawing.Size(75, 23);

@@ -232,7 +232,8 @@ namespace INS_1_MatrixDesigner
 
         private void makeGridButton_Click(object sender, EventArgs e)
         {
-
+            openbutton.Enabled = true;
+            savebutton.Enabled = true;
             nextbtn.Enabled = true;
             clearButton.Enabled = true;
             packingCheckBox.Enabled = true;
@@ -432,6 +433,8 @@ namespace INS_1_MatrixDesigner
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             // Set properties of the file dialog as needed.
+            currentLineDisplayed = 0;
+            currLineTxtBox.Text = currentLineDisplayed.ToString();
             openFileDialog.Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 1;
             openFileDialog.Multiselect = false;

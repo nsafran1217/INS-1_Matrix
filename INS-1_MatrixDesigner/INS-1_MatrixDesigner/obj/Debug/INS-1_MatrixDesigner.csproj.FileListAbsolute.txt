@@ -11,3 +11,16 @@ C:\Users\Nathan\source\repos\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug
 C:\Users\Nathan\source\repos\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Nathan\source\repos\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Nathan\source\repos\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.csproj.CopyComplete
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\INS-1_MatrixDesigner.exe.config
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\INS-1_MatrixDesigner.exe
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\INS-1_MatrixDesigner.pdb
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.csprojAssemblyReference.cache
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS_1_MatrixDesigner.Form1.resources
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS_1_MatrixDesigner.Properties.Resources.resources
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.csproj.GenerateResource.cache
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.csproj.CoreCompileInputs.cache
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.csproj.CopyComplete
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.exe
+C:\Users\Nathan\Desktop\Github Repos\INS-1_Matrix\INS-1_MatrixDesigner\INS-1_MatrixDesigner\obj\Debug\INS-1_MatrixDesigner.pdb
